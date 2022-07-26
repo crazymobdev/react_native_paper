@@ -8,10 +8,10 @@ import {
   MD3LightTheme,
 } from '../styles/themes';
 
-const defaultTheme = MD3LightTheme;
+export const DefaultTheme = MD3LightTheme;
 
 export const { ThemeProvider, withTheme, useTheme } =
-  createTheming<ReactNativePaperTheme>(defaultTheme);
+  createTheming<ReactNativePaperTheme>(DefaultTheme);
 
 export const useInternalTheme = (
   themeOverrides?: $DeepPartial<InternalTheme>
