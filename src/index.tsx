@@ -58,10 +58,4 @@ export {
 } from './components/Typography/v2';
 export { default as Text } from './components/Typography/Text';
 
-export type {
-  MD2Theme,
-  MD3Theme,
-  ThemeBase,
-  MD3Elevation,
-  Theme,
-} from './types';
+export type { MD2Theme, MD3Theme, ThemeBase, MD3Elevation } from './types';
