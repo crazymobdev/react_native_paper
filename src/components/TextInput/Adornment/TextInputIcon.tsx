@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
+import { StyleProp, StyleSheet, View, ViewStyle } from 'react-native';
 
-import IconButton from '../../IconButton/IconButton';
-import type { $Omit, Theme } from '../../../types';
+import { useInternalTheme } from '../../../core/theming';
+import type { $Omit, ThemeProp } from '../../../types';
 import type { IconSource } from '../../Icon';
-import { useTheme } from '../../../core/theming';
-import { getConstants } from '../helpers';
+import IconButton from '../../IconButton/IconButton';
 import { ICON_SIZE } from '../constants';
+import { getConstants } from '../helpers';
 
 export type Props = $Omit<
   React.ComponentProps<typeof IconButton>,
@@ -32,7 +32,7 @@ export type Props = $Omit<
   /**
    * @optional
    */
-  theme?: Theme;
+  theme?: ThemeProp;
 };
 
 type StyleContextType = {
@@ -55,7 +55,7 @@ const IconAdornment: React.FunctionComponent<
     side: 'left' | 'right';
   } & Omit<StyleContextType, 'style'>
 > = ({ icon, topPosition, side, isTextInputFocused, forceFocus }) => {
-  const { isV3 } = useTheme();
+  const { isV3 } = useInternalTheme();
   const { ICON_OFFSET } = getConstants(isV3);
 
   const style = {
@@ -116,7 +116,7 @@ const TextInputIcon = ({
     onPress?.();
   }, [forceTextInputFocus, forceFocus, isTextInputFocused, onPress]);
 
-  const theme = useTheme();
+  const theme = useInternalTheme();
 
   let iconColor = color;
 

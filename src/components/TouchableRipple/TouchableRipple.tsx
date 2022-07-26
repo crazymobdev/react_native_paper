@@ -8,8 +8,8 @@ import {
   GestureResponderEvent,
   Platform,
 } from 'react-native';
-import { withTheme } from '../../core/theming';
-import type { Theme } from '../../types';
+import { withInternalTheme } from '../../core/theming';
+import type { InternalTheme } from '../../types';
 import { getTouchableRippleColors } from './utils';
 
 type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
@@ -54,7 +54,7 @@ type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
   /**
    * @optional
    */
-  theme: Theme;
+  theme: InternalTheme;
 };
 
 /**
@@ -258,4 +258,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(TouchableRipple);
+export default withInternalTheme(TouchableRipple);

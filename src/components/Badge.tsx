@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Animated, StyleSheet, StyleProp, TextStyle } from 'react-native';
 import { white, black } from '../styles/themes/v2/colors';
-import { withTheme } from '../core/theming';
+import { withInternalTheme } from '../core/theming';
 import getContrastingColor from '../utils/getContrastingColor';
-import type { Theme } from '../types';
+import type { InternalTheme } from '../types';
 
 const defaultSize = 20;
 
@@ -25,7 +25,7 @@ type Props = React.ComponentProps<typeof Animated.Text> & {
   /**
    * @optional
    */
-  theme: Theme;
+  theme: InternalTheme;
 };
 
 /**
@@ -127,7 +127,7 @@ const Badge = ({
   );
 };
 
-export default withTheme(Badge);
+export default withInternalTheme(Badge);
 
 const styles = StyleSheet.create({
   container: {

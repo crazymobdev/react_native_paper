@@ -14,8 +14,8 @@ import Icon, { IconSource } from '../Icon';
 import Surface from '../Surface';
 import Text from '../Typography/Text';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { withTheme } from '../../core/theming';
-import type { Theme } from '../../types';
+import { withInternalTheme } from '../../core/theming';
+import type { InternalTheme } from '../../types';
 import { ButtonMode, getButtonColors } from './utils';
 
 type Props = React.ComponentProps<typeof Surface> & {
@@ -102,7 +102,7 @@ type Props = React.ComponentProps<typeof Surface> & {
   /**
    * @optional
    */
-  theme: Theme;
+  theme: InternalTheme;
   /**
    * testID to be used on tests.
    */
@@ -409,4 +409,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(Button);
+export default withInternalTheme(Button);

@@ -12,8 +12,8 @@ import {
 import color from 'color';
 import MaterialCommunityIcon from '../MaterialCommunityIcon';
 import Text from '../Typography/Text';
-import { withTheme } from '../../core/theming';
-import type { Theme } from '../../types';
+import { withInternalTheme } from '../../core/theming';
+import type { InternalTheme } from '../../types';
 
 type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
   /**
@@ -44,7 +44,7 @@ type Props = React.ComponentPropsWithRef<typeof TouchableWithoutFeedback> & {
   /**
    * @optional
    */
-  theme: Theme;
+  theme: InternalTheme;
 };
 
 /**
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(DataTableTitle);
+export default withInternalTheme(DataTableTitle);
 
 // @component-docs ignore-next-line
 export { DataTableTitle };

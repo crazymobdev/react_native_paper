@@ -14,9 +14,9 @@ import TextInputIcon, {
 import TextInputAffix, {
   Props as TextInputAffixProps,
 } from './Adornment/TextInputAffix';
-import { withTheme } from '../../core/theming';
+import { withInternalTheme } from '../../core/theming';
 import type { RenderProps, TextInputLabelProp } from './types';
-import type { Theme } from '../../types';
+import type { InternalTheme } from '../../types';
 
 const BLUR_ANIMATION_DURATION = 180;
 const FOCUS_ANIMATION_DURATION = 150;
@@ -133,7 +133,7 @@ export type TextInputProps = React.ComponentPropsWithRef<
   /**
    * @optional
    */
-  theme: Theme;
+  theme: InternalTheme;
 };
 
 interface CompoundedComponent
@@ -472,4 +472,4 @@ TextInput.Icon = TextInputIcon;
 // @ts-ignore Types of property 'theme' are incompatible.
 TextInput.Affix = TextInputAffix;
 
-export default withTheme(TextInput);
+export default withInternalTheme(TextInput);

@@ -5,8 +5,8 @@ import {
   Provider as SettingsProvider,
   Consumer as SettingsConsumer,
 } from '../../core/settings';
-import { ThemeProvider, withTheme } from '../../core/theming';
-import type { Theme } from '../../types';
+import { ThemeProvider, withInternalTheme } from '../../core/theming';
+import type { InternalTheme } from 'src/types';
 
 type Props = {
   /**
@@ -16,7 +16,7 @@ type Props = {
   /**
    * @optional
    */
-  theme: Theme;
+  theme: InternalTheme;
 };
 
 /**
@@ -63,4 +63,4 @@ class Portal extends React.Component<Props> {
   }
 }
 
-export default withTheme(Portal);
+export default withInternalTheme(Portal);

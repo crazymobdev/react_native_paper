@@ -6,8 +6,8 @@ import AppbarContent from './AppbarContent';
 import AppbarAction from './AppbarAction';
 import AppbarBackAction from './AppbarBackAction';
 import Surface from '../Surface';
-import { withTheme } from '../../core/theming';
-import type { MD3Elevation, Theme } from '../../types';
+import { withInternalTheme } from '../../core/theming';
+import type { MD3Elevation, InternalTheme } from '../../types';
 import {
   getAppbarColor,
   renderAppbarContent,
@@ -44,7 +44,7 @@ type Props = Partial<React.ComponentPropsWithRef<typeof View>> & {
   /**
    * @optional
    */
-  theme: Theme;
+  theme: InternalTheme;
   style?: StyleProp<ViewStyle>;
 };
 
@@ -54,7 +54,7 @@ type Props = Partial<React.ComponentPropsWithRef<typeof View>> & {
  * The bottom bar usually provides access to a drawer and up to four actions.
  *
  * By default Appbar uses primary color as a background, in dark theme with `adaptive` mode it will use surface colour instead.
- * See [Dark Theme](https://callstack.github.io/react-native-paper/theming.html#dark-theme) for more informations
+ * See [Dark InternalTheme](https://callstack.github.io/react-native-paper/theming.html#dark-theme) for more informations
  *
  * <div class="screenshots">
  *   <img class="small" src="screenshots/appbar.png" />
@@ -283,9 +283,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(Appbar);
+export default withInternalTheme(Appbar);
 
 // @component-docs ignore-next-line
-const AppbarWithTheme = withTheme(Appbar);
+const AppbarWithTheme = withInternalTheme(Appbar);
 // @component-docs ignore-next-line
 export { AppbarWithTheme as Appbar };

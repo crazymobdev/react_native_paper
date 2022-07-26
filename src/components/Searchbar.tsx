@@ -14,9 +14,9 @@ import {
 import color from 'color';
 import IconButton from './IconButton/IconButton';
 import Surface from './Surface';
-import { withTheme } from '../core/theming';
+import { withInternalTheme } from '../core/theming';
 import type { IconSource } from './Icon';
-import type { Theme } from '../types';
+import type { InternalTheme } from '../types';
 import MaterialCommunityIcon from './MaterialCommunityIcon';
 
 type Props = React.ComponentPropsWithRef<typeof TextInput> & {
@@ -61,7 +61,7 @@ type Props = React.ComponentPropsWithRef<typeof TextInput> & {
   /**
    * @optional
    */
-  theme: Theme;
+  theme: InternalTheme;
   /**
    * Custom color for icon, default will be derived from theme
    */
@@ -261,4 +261,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(Searchbar);
+export default withInternalTheme(Searchbar);
